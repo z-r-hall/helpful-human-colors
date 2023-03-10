@@ -1,0 +1,132 @@
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+svg {
+  padding-left: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+#TopNav {
+  background-color: #444444;
+  margin: 0;
+  height: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+#SideNav {
+  background-color: #999999;
+  height: 50rem;
+  width: 15rem;
+  text-align: center;
+  padding-top: 3rem;
+
+  h2 {
+    padding-left: 2rem;
+    text-align: left;
+    color: #333333;
+    font-weight: 400;
+  }
+
+  button {
+    width: 80%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    font-size: large;
+    font-weight: 600;
+  }
+}
+
+form {
+  text-align: right;
+  padding-right: 1.5rem;
+  input {
+    border-radius: 0.5rem;
+    height: 2rem;
+    padding-left: 1rem;
+    color: grey;
+  }
+}
+
+#container {
+  padding-right: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.details {
+  position: relative;
+  background-color: white;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  text-align: center;
+  width: 90%;
+  height: 55%;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+
+  .hexName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    background-color: white;
+    height: 15%;
+    width: 100%;
+    bottom: 0px;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom: 0px solid black;
+  }
+}
+
+#detPall {
+  text-align: center;
+  margin-left: 2rem;
+  width: 90%;
+}
+
+.cardColor {
+  display: inline-block;
+  height: 9rem;
+  width: 9rem;
+}
+
+#detailsContainer {
+  text-align: center;
+}
+#clear {
+  width: 100%;
+  button {
+    background-color: gra;
+    border-radius: 0.5px solid black;
+    margin-top: 1rem;
+    text-align: center;
+    width: 7rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    font-size: large;
+    font-weight: 600;
+  }
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+#loading {
+  text-align: center;
+  margin-top: 15rem;
+}
+
+#pages {
+  text-align: center;
+}
+
+.pagebuttons {
+  margin: 1rem;
+}
