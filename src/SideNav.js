@@ -43,7 +43,7 @@ function SideNav({ setShowList, setShowDetails }) {
 
   function pickRandom() {
     const random = Math.ceil(Math.random() * 100);
-    fetch(`http://localhost:3400/api/${random}`)
+    fetch(`https://color-backend.onrender.com/api/${random}`)
       .then((data) => data.json())
       .then((data) => {
         setShowList(false);
@@ -72,5 +72,4 @@ function SideNav({ setShowList, setShowDetails }) {
     </div>
   );
 }
-
 export default SideNav;

@@ -31,7 +31,7 @@ function List({
   }
 
   useEffect(() => {
-    fetch(`http://localhost:3400/api`)
+    fetch(`https://color-backend.onrender.com/api`)
       .then((data) => data.json())
       .then((data) => {
         setAllColors(data);
