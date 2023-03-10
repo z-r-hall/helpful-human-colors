@@ -40,6 +40,10 @@ svg {
   }
 }
 
+h2:hover {
+  cursor:pointer;
+}
+
 form {
   text-align: right;
   padding-right: 1.5rem;
@@ -102,7 +106,7 @@ form {
 #clear {
   width: 100%;
   button {
-    background-color: gra;
+    background-color: white;
     border-radius: 0.5px solid black;
     margin-top: 1rem;
     text-align: center;
@@ -129,4 +133,8 @@ h3 {
 
 .pagebuttons {
   margin: 1rem;
+}
+
+a:hover {
+  cursor: pointer;
 }
