@@ -3,18 +3,28 @@ import { d1, d2, d3 } from '../constants/constants';
 
 function TopNav({ setShowFiltered, setShowList, setColorHex, colorHex, allColors, setAllColors, hex, setHex, tempAllColors, setTempAllColors }) {
   const [search, setSearch] = useState('Search');
-
+  let tempArr = [];
   useEffect(()=> {
-    console.log('all', allColors)
-    const filtered = allColors.filter(
-      (el) => {
-        console.log(el.colorHex.slice(0, search.length), search.toLowerCase())
-        el.colorHex.slice(0, search.length) == search.toLowerCase() ||
-        el.colorHex.slice(0, search.length) == search.toUpperCase()
+    
+    for(let i = 0; i < allColors.length; i++) {
+      const el = allColors[i];
+      if( el.colorHex.slice(0, search.length) == search.toLowerCase() ||
+      el.colorHex.slice(0, search.length) == search.toUpperCase()) {
+        console.log('match')
+        tempArr.push(allColors[i]);
       }
-    );
-    console.log('filtered', filtered)
-    setAllColors(filtered);
+    }
+    setAllColors(tempArr);
+
+    // const filtered = allColors.filter(
+    //   (el) => {
+    //     console.log(el.colorHex.slice(0, search.length), search.toLowerCase())
+    //     el.colorHex.slice(0, search.length) == search.toLowerCase() ||
+    //     el.colorHex.slice(0, search.length) == search.toUpperCase()
+    //   }
+    // );
+    // console.log('filtered', filtered)
+    // setAllColors(filtered);
   }, [search])
 
   function filterColor(e) {
@@ -23,7 +33,7 @@ function TopNav({ setShowFiltered, setShowList, setColorHex, colorHex, allColors
     
     // setShowFiltered(true);
     // setShowList(false);
-    if (hex.length === 0) {
+    if (search.length === 0) {
       setAllColors(tempAllColors)
       // setShowFiltered(false);
       // setShowList(true);
