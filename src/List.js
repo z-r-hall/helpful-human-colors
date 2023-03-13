@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { colorNames } from '../constants/constants';
+import React, { useEffect } from 'react';
 
 function List({
   setLoaded,
@@ -7,23 +6,11 @@ function List({
   allColors,
   setShowList,
   setShowDetails,
-  hex,
   setHex,
   setTempAllColors,
   tempAllColors,
-  search,
   setSearch,
 }) {
-  let all;
-  const buttons = [];
-
-  function getDetails(e) {
-    setSearch('');
-    setHex(e.target.innerText);
-    setShowDetails(true);
-    setShowList(false);
-  }
-
   useEffect(() => {
     fetch(`https://color-backend.onrender.com/api`)
       .then((data) => data.json())
@@ -33,6 +20,16 @@ function List({
         setLoaded(true);
       });
   }, []);
+
+  function getDetails(e) {
+    setSearch('');
+    setHex(e.target.innerText);
+    setShowDetails(true);
+    setShowList(false);
+  }
+
+  let all;
+  const buttons = [];
 
   for (let i = 1; i < 11; i++) {
     if (i === 1) {

@@ -19,6 +19,7 @@ function SideNav({ setShowList, setShowDetails, setHex, setSearch }) {
         setHex(data.colorHex);
       });
   }
+
   return (
     <div id='SideNav'>
       <button onClick={pickRandom}>Random Color</button>
