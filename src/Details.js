@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Details() {
+function Details({hex}) {
   return (
-    <div className='details'>
-      <div className='hexName'>#FFFFFF</div>
+    <div style={{ backgroundColor:`${hex}` }} className='details'>
+      <div className='hexName'>{hex}</div>
     </div>
   );
 }

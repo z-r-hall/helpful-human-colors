@@ -7,25 +7,45 @@ function List({
   allColors,
   setShowList,
   setShowDetails,
+  hex, 
+  setHex
 }) {
   let all;
   const buttons = [];
 
+  // useEffect(() => {
+  //   const color = document.querySelectorAll('.details');
+  //   console.log(color)
+  //   let j = 0.9;
+  //   for (let i = 0; i < color.length; i++) {
+  //     color[i].style.backgroundColor = hex;
+  //     if (i !== 0) {
+  //       color[i].style.opacity = j;
+  //       j -= 0.2;
+  //     }
+  //   }
+  // }, [hex])
+
   function getDetails(e) {
-    const colorName = e.target.innerText;
-    const color = document.querySelectorAll('.details');
-    let j = 0.9;
-    for (let i = 0; i < color.length; i++) {
-      color[i].style.backgroundColor = colorName;
-      if (i !== 0) {
-        color[i].style.opacity = j;
-        j -= 0.2;
-      }
-    }
-    const hex = document.querySelectorAll('.hexName');
-    for (let i = 0; i < hex.length; i++) {
-      hex[i].innerText = colorNames[colorName];
-    }
+    setHex(e.target.innerText)
+    console.log(document.querySelectorAll('.details').style)
+    // const colorName = e.target.innerText;
+    // const color = document.querySelectorAll('.details');
+    // let j = 0.9;
+    // for (let i = 0; i < color.length; i++) {
+    //   color[i].style.backgroundColor = e.target.textContent;
+    //   if (i !== 0) {
+    //     color[i].style.opacity = j;
+    //     j -= 0.2;
+    //   }
+    // }
+    // const hex = document.querySelectorAll('.hexName');
+    // console.log(hex)
+    // for (let i = 0; i < hex.length; i++) {
+    //   // console.log(colorName, colorNames[])
+    //   hex[i].innerText = colorName;
+    // }
+    // console.log(color[0].style.backgroundColor, hex[0])
     setShowDetails(true);
     setShowList(false);
   }

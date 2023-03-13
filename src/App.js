@@ -14,6 +14,7 @@ function App() {
   const [allColors, setAllColors] = useState([]);
   const [colorHex, setColorHex] = useState([]);
   const [showFiltered, setShowFiltered] = useState(false);
+  const [hex, setHex] = useState('')
 
   function backToList() {
     setShowDetails(false);
@@ -44,6 +45,8 @@ function App() {
               setLoaded={setLoaded}
               setShowDetails={setShowDetails}
               setShowList={setShowList}
+              hex={hex}
+              setHex={setHex}
             />
           )}
           {showFiltered && (
@@ -56,8 +59,8 @@ function App() {
           )}
           {showDetails && (
             <div id='detailsContainer'>
-              <Details />
-              <DetailsPallette />
+              <Details hex={hex}/>
+              <DetailsPallette hex={hex}/>
               <div id='clear'>
                 <button onClick={backToList}>Clear</button>
               </div>
