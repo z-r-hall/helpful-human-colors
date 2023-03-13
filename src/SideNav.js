@@ -4,21 +4,6 @@ import { colorNames } from '../constants/constants';
 function SideNav({ setShowList, setShowDetails, hex, setHex }) {
   function getColor(e) {
     setHex(colorNames[e.target.innerText])
-    // const colorName = e.target.innerText;
-    // const color = document.querySelectorAll('.details');
-    // let j = 0.9;
-    // for (let i = 0; i < color.length; i++) {
-    //   console.log(color[i]);
-    //   color[i].style.backgroundColor = colorName;
-    //   if (i !== 0) {
-    //     color[i].style.opacity = j;
-    //     j -= 0.2;
-    //   }
-    // }
-    // const hex = document.querySelectorAll('.hexName');
-    // for (let i = 0; i < hex.length; i++) {
-    //   hex[i].innerText = colorNames[colorName];
-    // }
     setShowList(false);
     setShowDetails(true);
   }
