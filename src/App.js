@@ -13,8 +13,8 @@ function App() {
   const [allColors, setAllColors] = useState([]);
   const [tempAllColors, setTempAllColors] = useState([]);
   const [colorHex, setColorHex] = useState([]);
-  const [showFiltered, setShowFiltered] = useState(false);
   const [hex, setHex] = useState('');
+  const [search, setSearch] = useState('Search');
 
   function backToList() {
     setShowDetails(false);
@@ -31,17 +31,19 @@ function App() {
           setAllColors={setAllColors}
           colorHex={colorHex}
           setColorHex={setColorHex}
-          setShowFiltered={setShowFiltered}
           hex={hex}
           setHex={setHex}
           tempAllColors={tempAllColors}
           setTempAllColors={setTempAllColors}
+          search={search}
+          setSearch={setSearch}
         />
         <div id='container'>
           <SideNav
             setShowDetails={setShowDetails}
             setShowList={setShowList}
             setHex={setHex}
+            setSearch={setSearch}
           />
           {!loaded && <div id='loading'>Loading...</div>}
           {showList && (
@@ -57,6 +59,8 @@ function App() {
               setHex={setHex}
               setTempAllColors={setTempAllColors}
               tempAllColors={tempAllColors}
+              search={search}
+              setSearch={setSearch}
             />
           )}
           {showDetails && (

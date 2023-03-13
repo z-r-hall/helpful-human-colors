@@ -59,3 +59,14 @@ export const colorNames = {
   'Gray': '#808080'
 }
 
+export const basicColors = [
+  'Red',
+  'Orange',
+  'Yellow',
+  'Green',
+  'Blue',
+  'Purple',
+  'Brown',
+  'Gray',
+];
+

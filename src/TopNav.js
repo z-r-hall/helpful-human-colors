@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { d1, d2, d3 } from '../constants/constants';
 
-function TopNav({ setShowFiltered, setShowList, setColorHex, colorHex, allColors, setAllColors, hex, setHex, tempAllColors, setTempAllColors }) {
+function TopNav({ allColors, setAllColors, tempAllColors, search, setSearch, setShowDetails, setShowList }) {
   
-  const [search, setSearch] = useState('Search');
   let tempArr = [];
 
   useEffect(()=> {
@@ -16,9 +15,12 @@ function TopNav({ setShowFiltered, setShowList, setColorHex, colorHex, allColors
       }
     }
     setAllColors(tempArr);
+    if(search.length === 0) setAllColors(tempAllColors)
   }, [search])
 
   function filterColor(e) {
+    setShowDetails(false);
+    setShowList(true)
     setAllColors(tempAllColors)
     setSearch(e.target.value);
   }

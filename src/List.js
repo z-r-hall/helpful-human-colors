@@ -7,16 +7,19 @@ function List({
   allColors,
   setShowList,
   setShowDetails,
-  hex, 
+  hex,
   setHex,
   setTempAllColors,
-  tempAllColors
+  tempAllColors,
+  search,
+  setSearch,
 }) {
   let all;
   const buttons = [];
 
   function getDetails(e) {
-    setHex(e.target.innerText)
+    setSearch('');
+    setHex(e.target.innerText);
     setShowDetails(true);
     setShowList(false);
   }
@@ -53,7 +56,7 @@ function List({
   }
 
   function nextPage(e) {
-    setAllColors(tempAllColors)
+    setAllColors(tempAllColors);
     const buttons = document.querySelectorAll('.pagebuttons');
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].style.textDecoration = 'none';
