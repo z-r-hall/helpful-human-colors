@@ -5,17 +5,16 @@ import SideNav from './SideNav';
 import List from './List';
 import Details from './Details';
 import DetailsPallette from './DetailsPallette';
-import Filtered from './Filtered';
 
 function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [showList, setShowList] = useState(true);
   const [allColors, setAllColors] = useState([]);
-  const [tempAllColors, setTempAllColors] = useState([])
+  const [tempAllColors, setTempAllColors] = useState([]);
   const [colorHex, setColorHex] = useState([]);
   const [showFiltered, setShowFiltered] = useState(false);
-  const [hex, setHex] = useState('')
+  const [hex, setHex] = useState('');
 
   function backToList() {
     setShowDetails(false);
@@ -39,7 +38,11 @@ function App() {
           setTempAllColors={setTempAllColors}
         />
         <div id='container'>
-          <SideNav setShowDetails={setShowDetails} setShowList={setShowList} setHex={setHex} />
+          <SideNav
+            setShowDetails={setShowDetails}
+            setShowList={setShowList}
+            setHex={setHex}
+          />
           {!loaded && <div id='loading'>Loading...</div>}
           {showList && (
             <List
@@ -56,18 +59,10 @@ function App() {
               tempAllColors={tempAllColors}
             />
           )}
-          {showFiltered && (
-            <Filtered
-              allColors={allColors}
-              colorHex={colorHex}
-              setShowDetails={setShowDetails}
-              setShowList={setShowList}
-            />
-          )}
           {showDetails && (
             <div id='detailsContainer'>
-              <Details hex={hex}/>
-              <DetailsPallette hex={hex}/>
+              <Details hex={hex} />
+              <DetailsPallette hex={hex} />
               <div id='clear'>
                 <button onClick={backToList}>Clear</button>
               </div>

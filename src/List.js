@@ -53,9 +53,7 @@ function List({
   }
 
   function nextPage(e) {
-    // console.log(allColors)
     setAllColors(tempAllColors)
-    // console.log(allColors)
     const buttons = document.querySelectorAll('.pagebuttons');
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].style.textDecoration = 'none';
