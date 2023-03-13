@@ -34,7 +34,7 @@ function App() {
           setShowFiltered={setShowFiltered}
         />
         <div id='container'>
-          <SideNav setShowDetails={setShowDetails} setShowList={setShowList} />
+          <SideNav setShowDetails={setShowDetails} setShowList={setShowList} setHex={setHex} />
           {!loaded && <div id='loading'>Loading...</div>}
           {showList && (
             <List
