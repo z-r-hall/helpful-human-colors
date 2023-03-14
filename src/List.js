@@ -69,19 +69,6 @@ e.target.style.textDecoration = 'underline';
     }
     setAllColors(all);
     });
-
-    // setAllColors(tempAllColors);
-    // const buttons = document.querySelectorAll('.pagebuttons');
-    // for (let i = 0; i < buttons.length; i++) {
-    //   buttons[i].style.textDecoration = 'none';
-    // }
-    // e.target.style.textDecoration = 'underline';
-    // const pageNum = Number(e.target.innerText);
-    // all = [];
-    // for (let i = (pageNum - 1) * 15; i < pageNum * 15; i++) {
-    //   all.push(allColors[i]);
-    // }
-    // setAllColors(all);
   }
 
   return (

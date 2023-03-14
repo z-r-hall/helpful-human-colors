@@ -11,7 +11,7 @@ router.get('/', colorControllers.getColors, (req, res) => {
 });
 
 // router.delete('/:idRandSearch', colorControllers.deleteColor, (req, res) => {
-//   res.status(200).json({});
+//   res.status(200).json(res.locals.deleteColor);
 // });
 
 //used to create database
