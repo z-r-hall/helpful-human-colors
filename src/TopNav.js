@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { d1, d2, d3 } from '../constants/constants';
 
 function TopNav({

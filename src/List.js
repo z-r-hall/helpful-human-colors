@@ -8,7 +8,6 @@ function List({
   setShowDetails,
   setHex,
   setTempAllColors,
-  tempAllColors,
   setSearch,
 }) {
   useEffect(() => {
@@ -28,9 +27,28 @@ function List({
     setShowList(false);
   }
 
+  function nextPage(e) {
+    fetch(`https://color-backend.onrender.com/api`)
+      .then((data) => data.json())
+      .then((data) => {
+        data.map((el, i) => console.log(i));
+        const buttons = document.querySelectorAll('.pagebuttons');
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].style.textDecoration = 'none';
+        }
+
+        e.target.style.textDecoration = 'underline';
+        const pageNum = Number(e.target.innerText);
+        all = [];
+        for (let i = (pageNum - 1) * 15; i < pageNum * 15; i++) {
+          all.push(data[i]);
+        }
+        setAllColors(all);
+      });
+  }
+
   let all;
   const buttons = [];
-
   for (let i = 1; i < 11; i++) {
     if (i === 1) {
       buttons.push(
@@ -50,25 +68,6 @@ function List({
         </a>
       );
     }
-  }
-
-  function nextPage(e) {
-    fetch(`https://color-backend.onrender.com/api`)
-    .then((data) => data.json())
-    .then((data) => {
-      const buttons = document.querySelectorAll('.pagebuttons');
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].style.textDecoration = 'none';
-      }
-
-e.target.style.textDecoration = 'underline';
-    const pageNum = Number(e.target.innerText);
-    all = [];
-    for (let i = (pageNum - 1) * 15; i < pageNum * 15; i++) {
-      all.push(data[i]);
-    }
-    setAllColors(all);
-    });
   }
 
   return (

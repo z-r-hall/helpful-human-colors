@@ -20,16 +20,6 @@ function SideNav({ setShowList, setShowDetails, setHex, setSearch }) {
       });
   }
 
-  // function deleteColors(){
-  //   for(let i = 10; i < 100; i++) {
-  //   fetch(`https://color-backend.onrender.com/api/${i}`)
-  //     .then((data) => data.json())
-  //     .then((data) => {
-  //      console.log(data)
-  //     });
-  //   }
-  // }
-
   return (
     <div id='SideNav'>
       <button onClick={pickRandom}>Random Color</button>
@@ -41,7 +31,6 @@ function SideNav({ setShowList, setShowDetails, setHex, setSearch }) {
           </h2>
         );
       })}
-        {/* <button onClick={deleteColors}>delete</button> */}
     </div>
   );
 }

@@ -15,7 +15,6 @@ function DetailsPallette({ hex }) {
       </span>
     );
   }
-
   return (
     <div id='detPall'>
       <h3>Opacities:</h3>
