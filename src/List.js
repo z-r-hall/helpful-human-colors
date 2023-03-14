@@ -53,18 +53,35 @@ function List({
   }
 
   function nextPage(e) {
-    setAllColors(tempAllColors);
-    const buttons = document.querySelectorAll('.pagebuttons');
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].style.textDecoration = 'none';
-    }
-    e.target.style.textDecoration = 'underline';
+    fetch(`https://color-backend.onrender.com/api`)
+    .then((data) => data.json())
+    .then((data) => {
+      const buttons = document.querySelectorAll('.pagebuttons');
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].style.textDecoration = 'none';
+      }
+
+e.target.style.textDecoration = 'underline';
     const pageNum = Number(e.target.innerText);
     all = [];
     for (let i = (pageNum - 1) * 15; i < pageNum * 15; i++) {
-      all.push(allColors[i]);
+      all.push(data[i]);
     }
     setAllColors(all);
+    });
+
+    // setAllColors(tempAllColors);
+    // const buttons = document.querySelectorAll('.pagebuttons');
+    // for (let i = 0; i < buttons.length; i++) {
+    //   buttons[i].style.textDecoration = 'none';
+    // }
+    // e.target.style.textDecoration = 'underline';
+    // const pageNum = Number(e.target.innerText);
+    // all = [];
+    // for (let i = (pageNum - 1) * 15; i < pageNum * 15; i++) {
+    //   all.push(allColors[i]);
+    // }
+    // setAllColors(all);
   }
 
   return (
