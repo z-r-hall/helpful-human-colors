@@ -35,7 +35,7 @@ function TopNav({
   }
   return (
     <div id='TopNav'>
-      <a href='https://www.helpfulhuman.com/'>
+      <a className="header-logo" href='https://www.helpfulhuman.com/'>
         <svg width='52px' height='52px' viewBox='0 0 52 52' version='1.1'>
           <g fill='#fff'>
             <path d={d1} id='Fill-3'></path>

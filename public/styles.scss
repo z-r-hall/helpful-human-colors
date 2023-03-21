@@ -139,16 +139,18 @@ a:hover {
   cursor: pointer;
 }
 
-@media(max-width: 390px) {
+@media(max-width: 415px) {
   body {
-    min-height: 100vh;
+    overflow: hidden;
+    min-height: 80vh;
+    text-align: center;
     // overflow: hidden;
   }
   #SideNav {
-  height: 100vh;
+  height: auto;
   width: 7rem;
   text-align: center;
-  padding-top: 3rem;
+  padding-top: 1rem;
   font-size: small;
 
   h2 {
@@ -202,5 +204,20 @@ a:hover {
 }
 .pagebuttons {
   margin: .5rem;
+}
+.header-logo {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+form {
+  text-align: right;
+  padding-right: 2.5rem;
+  input {
+    border-radius: 0.5rem;
+    height: 2rem;
+    padding-left: 1rem;
+    color: grey;
+  }
 }
 }
