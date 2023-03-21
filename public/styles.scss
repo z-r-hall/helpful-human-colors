@@ -138,3 +138,69 @@ h3 {
 a:hover {
   cursor: pointer;
 }
+
+@media(max-width: 390px) {
+  body {
+    min-height: 100vh;
+    // overflow: hidden;
+  }
+  #SideNav {
+  height: 100vh;
+  width: 7rem;
+  text-align: center;
+  padding-top: 3rem;
+  font-size: small;
+
+  h2 {
+    padding-left: 2rem;
+    text-align: left;
+    color: #333333;
+    font-weight: 400;
+  }
+
+  button {
+    width: 80%;
+    height: 3rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: medium;
+    font-weight: 600;
+  }
+}
+#TopNav {
+  height: 5rem;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.details {
+  background-color: white;
+  height: 8vh;
+  width: 8vh;
+  margin: 5px;
+  margin-left: 6px;
+  font-size: small;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+
+  .hexName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    background-color: white;
+    height: 30%;
+    width: 100%;
+    bottom: 0px;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom: 0px solid black;
+  }
+}
+.pagebuttons {
+  margin: .5rem;
+}
+}
